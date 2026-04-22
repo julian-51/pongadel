@@ -1,0 +1,20 @@
+icon: snap/gui/easy-pong.png
+summary: Classic Pong fun reimagined with local multiplayer and modern themes.
+group: Applications/Utility
+vendor: Julian Kristal Sejahtera
+packager: Royhan Syamhi
+packagerEmail: juliankristal51@gmail.com
+license: MIT
+url: https://github.com/adeeteya/EasyPong
+
+display_name: Easy Pong
+
+keywords:
+  - Pong
+  - Game
+
+generic_name: Easy Pong
+categories:
+  - Game
+
+startup_notify: true

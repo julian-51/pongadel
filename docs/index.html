@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kebijakan Privasi untuk Pong Adel.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/x-icon" href="../web/favicon.ico">
+  <title>Kebijakan Privasi Pong Adel</title>
+  <style>
+    :root {
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #e5eefc;
+      --muted: #9db0cb;
+      --accent-soft: rgba(56, 189, 248, 0.16);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 24rem),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 22rem),
+        linear-gradient(180deg, #08111f 0%, #0b1324 45%, #08101c 100%);
+      min-height: 100vh;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(10px);
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+
+    body::before {
+      width: 16rem;
+      height: 16rem;
+      top: 7%;
+      right: 6%;
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    body::after {
+      width: 18rem;
+      height: 18rem;
+      bottom: 5%;
+      left: 5%;
+      background: rgba(245, 158, 11, 0.08);
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(13, 24, 41, 0.92), rgba(10, 18, 32, 0.96));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .app-icon {
+      width: 160px;
+      height: 160px;
+      border-radius: 36px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #bde9fb;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      max-width: 60ch;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card,
+    .content section {
+      background: rgba(15, 28, 47, 0.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .card {
+      grid-column: span 4;
+      padding: 20px;
+    }
+
+    .content {
+      margin-top: 18px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .content section {
+      padding: 24px;
+    }
+
+    .section-title,
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 14px;
+      font-size: 1.08rem;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.98rem;
+      margin: 0 0 14px;
+    }
+
+    a {
+      color: #8edfff;
+    }
+
+    .icon-wrap {
+      display: inline-flex;
+      width: 2.4rem;
+      height: 2.4rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      flex: 0 0 auto;
+    }
+
+    .icon {
+      width: 1.15rem;
+      height: 1.15rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      color: #7f95b2;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .app-icon {
+        width: 124px;
+        height: 124px;
+      }
+
+      .card {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 1rem, 1100px);
+        padding-top: 14px;
+      }
+
+      .hero,
+      .card,
+      .content section {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .card {
+        grid-column: 1 / -1;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <img class="app-icon" src="../icon.png" alt="Ikon aplikasi Pong Adel">
+      <div>
+        <div class="eyebrow">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3l7 4v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V7l7-4Z"></path>
+            <path d="m9.5 12 1.7 1.7L14.8 10"></path>
+          </svg>
+          Kebijakan Privasi
+        </div>
+        <h1>Pong Adel</h1>
+        <p class="subtitle">
+          Halaman ini menjelaskan bagaimana Pong Adel menangani privasi pengguna. Aplikasi ini tidak
+          memerlukan pendaftaran dan tidak mengumpulkan data pribadi selama penggunaan normal.
+        </p>
+        <div class="hero-meta">
+          <span class="chip">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 3v3"></path>
+              <path d="M16 3v3"></path>
+              <path d="M4 9h16"></path>
+              <rect x="4" y="5" width="16" height="16" rx="2"></rect>
+            </svg>
+            Berlaku sejak: 2024-07-06
+          </span>
+          <span class="chip">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21c4.97 0 9-4.03 9-9S16.97 3 12 3 3 7.03 3 12s4.03 9 9 9Z"></path>
+              <path d="M3.6 9h16.8"></path>
+              <path d="M3.6 15h16.8"></path>
+              <path d="M12 3a15.3 15.3 0 0 1 0 18"></path>
+              <path d="M12 3a15.3 15.3 0 0 0 0 18"></path>
+            </svg>
+            Publisher: Julian Kristal Sejahtera
+          </span>
+          <a class="chip" href="mailto:juliankristal51@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16v12H4z"></path>
+              <path d="m4 8 8 6 8-6"></path>
+            </svg>
+            juliankristal51@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="ringkasan privasi">
+      <article class="card">
+        <h2 class="card-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 8v4"></path>
+              <path d="M12 16h.01"></path>
+            </svg>
+          </span>
+          Data yang dikumpulkan
+        </h2>
+        <p>Aplikasi tidak mengambil informasi pribadi saat diunduh maupun saat digunakan.</p>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21c4.97 0 9-4.03 9-9S16.97 3 12 3 3 7.03 3 12s4.03 9 9 9Z"></path>
+              <path d="M3.6 9h16.8"></path>
+              <path d="M3.6 15h16.8"></path>
+              <path d="M12 3a15.3 15.3 0 0 1 0 18"></path>
+              <path d="M12 3a15.3 15.3 0 0 0 0 18"></path>
+            </svg>
+          </span>
+          Lokasi dan pembagian data
+        </h2>
+        <p>Aplikasi tidak mengumpulkan lokasi presisi dan tidak membagikan data ke pihak ketiga.</p>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a4 4 0 0 0-4 4v2H7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1V7a4 4 0 0 0-4-4Z"></path>
+              <path d="M9 9V7a3 3 0 0 1 6 0v2"></path>
+            </svg>
+          </span>
+          Keamanan
+        </h2>
+        <p>Karena aplikasi tidak menyimpan data pribadi, tidak ada data pengguna yang terekspos di server aplikasi.</p>
+      </article>
+    </section>
+
+    <div class="content">
+      <section>
+        <h2 class="section-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14"></path>
+              <path d="M5 12h14"></path>
+            </svg>
+          </span>
+          Informasi yang Dikumpulkan dan Penggunaannya
+        </h2>
+        <p>
+          Kebijakan privasi ini berlaku untuk aplikasi Pong Adel pada perangkat seluler yang disediakan oleh
+          Julian Kristal Sejahtera sebagai layanan. Layanan ini disediakan sebagaimana adanya.
+        </p>
+        <p>
+          Aplikasi tidak memperoleh informasi apa pun saat Anda mengunduh dan menggunakannya. Pendaftaran
+          tidak diperlukan untuk menggunakan aplikasi.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2 4 5v6c0 5 3.4 9.1 8 11 4.6-1.9 8-6 8-11V5l-8-3Z"></path>
+              <path d="M9 12h6"></path>
+            </svg>
+          </span>
+          Lokasi, Pihak Ketiga, dan Opt-Out
+        </h2>
+        <p>Aplikasi ini tidak mengumpulkan informasi lokasi presisi secara real-time dari perangkat Anda.</p>
+        <p>Karena aplikasi tidak mengumpulkan informasi apa pun, tidak ada data yang dibagikan kepada pihak ketiga.</p>
+        <p>
+          Anda dapat menghentikan seluruh pengumpulan informasi dengan mudah melalui uninstall aplikasi
+          menggunakan proses standar yang tersedia di perangkat atau marketplace aplikasi Anda.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="10" cy="7" r="4"></circle>
+              <path d="M20 8v6"></path>
+              <path d="M17 11h6"></path>
+            </svg>
+          </span>
+          Anak-Anak
+        </h2>
+        <p>Aplikasi ini tidak ditujukan untuk secara sadar meminta data atau memasarkan layanan kepada anak di bawah usia 13 tahun.</p>
+        <p>
+          Penyedia layanan tidak secara sadar mengumpulkan informasi identitas pribadi dari anak-anak. Orang tua
+          dan wali dianjurkan untuk memantau penggunaan internet anak dan memastikan anak tidak memberikan
+          informasi pribadi tanpa izin.
+        </p>
+        <p>
+          Jika Anda memiliki alasan untuk percaya bahwa seorang anak telah memberikan informasi identitas pribadi
+          melalui aplikasi atau layanan ini, silakan hubungi
+          <a href="mailto:juliankristal51@gmail.com">juliankristal51@gmail.com</a>.
+          Pengguna juga harus berusia minimal 16 tahun untuk menyetujui pemrosesan informasi pribadi di negara
+          yang memberlakukan batas usia tersebut.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m12 3 7 4v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V7l7-4Z"></path>
+              <path d="M9.5 12 11 13.5 14.8 9.8"></path>
+            </svg>
+          </span>
+          Keamanan dan Perubahan Kebijakan
+        </h2>
+        <p>
+          Penyedia layanan menjaga kerahasiaan informasi pengguna. Namun karena aplikasi ini tidak mengumpulkan
+          informasi apa pun, tidak ada risiko data pribadi diakses oleh pihak yang tidak berwenang melalui aplikasi ini.
+        </p>
+        <p>
+          Kebijakan privasi ini dapat diperbarui dari waktu ke waktu untuk alasan apa pun. Setiap perubahan akan
+          diumumkan melalui halaman ini. Penggunaan berkelanjutan atas aplikasi dianggap sebagai persetujuan terhadap
+          versi kebijakan yang diperbarui.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">
+          <span class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16v12H4z"></path>
+              <path d="m4 8 8 6 8-6"></path>
+            </svg>
+          </span>
+          Persetujuan dan Kontak
+        </h2>
+        <p>
+          Dengan menggunakan aplikasi ini, Anda menyetujui pemrosesan informasi sebagaimana dijelaskan dalam
+          kebijakan privasi ini, baik saat ini maupun setelah diperbarui oleh penyedia layanan.
+        </p>
+        <p>
+          Jika Anda memiliki pertanyaan mengenai privasi saat menggunakan aplikasi ini, atau pertanyaan mengenai
+          praktik penyedia layanan, hubungi:
+          <a href="mailto:juliankristal51@gmail.com">juliankristal51@gmail.com</a>
+        </p>
+      </section>
+    </div>
+
+    <p class="footer">Halaman GitHub Pages untuk Kebijakan Privasi Pong Adel.</p>
+  </main>
+</body>
+</html>
