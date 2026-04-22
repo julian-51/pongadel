@@ -32,7 +32,7 @@ Penyedia Layanan menjaga kerahasiaan informasi Anda. Namun karena aplikasi ini t
 
 Kebijakan Privasi ini dapat diperbarui dari waktu ke waktu untuk alasan apa pun. Penyedia Layanan akan memberi tahu Anda mengenai perubahan dengan memperbarui halaman Kebijakan Privasi ini. Anda disarankan untuk meninjau halaman ini secara berkala karena penggunaan berkelanjutan dianggap sebagai persetujuan atas semua perubahan.
 
-Kebijakan privasi ini berlaku efektif sejak 2024-07-06.
+Kebijakan privasi ini berlaku efektif sejak 2026-04-22.
 
 **Persetujuan Anda**
 
