@@ -1,6 +1,7 @@
 import java.util.Properties
 import java.io.FileInputStream
 import java.io.FileNotFoundException
+import org.gradle.api.GradleException
 
 plugins {
     id("com.android.application")
@@ -20,6 +21,17 @@ val hasReleaseKeystore =
     listOf("keyAlias", "keyPassword", "storePassword", "storeFile").all {
         !keystoreProperties.getProperty(it).isNullOrBlank()
     }
+
+val isReleaseBuildRequested = gradle.startParameter.taskNames.any { taskName ->
+    taskName.contains("Release", ignoreCase = true)
+}
+
+if (isReleaseBuildRequested && !hasReleaseKeystore) {
+    throw GradleException(
+        "Release signing is not configured. Add android/key.properties with keyAlias, " +
+            "keyPassword, storePassword, and storeFile before building a release."
+    )
+}
 
 android {
     namespace = "com.jks.pongadel"
@@ -60,12 +72,7 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
         getByName("release") {
-            signingConfig =
-                if (hasReleaseKeystore) {
-                    signingConfigs.getByName("release")
-                } else {
-                    signingConfigs.getByName("debug")
-                }
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }
